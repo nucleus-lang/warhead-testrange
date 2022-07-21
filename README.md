@@ -12,6 +12,5 @@ Other important things include resource consumption, security and scalability.
 
 ## Who are the canidates?
 Some might get added or removed later on:
-* .NET with ASP.NET
 * Elixir with Phoenix
 * Rust with Actix-Web (back-end) and Astro (front-end)
