@@ -1,27 +1,21 @@
-use actix_web::{post, web, App, HttpResponse, HttpServer, Responder};
+// Imports, e.g. Actix-Web things and the file server middleware
+use actix_web::{App, HttpServer}; 
 use actix_files::Files;
 
-#[post("/echo")]
-async fn echo(req_body: String) -> impl Responder {
-    HttpResponse::Ok().body(req_body)
-}
-
-async fn manual_hello() -> impl Responder {
-    HttpResponse::Ok().body("Hey there!")
-}
-
-#[actix_web::main]
+#[actix_web::main] // Make the main function usable by actix_web
 async fn main() -> std::io::Result<()> {
+    // Create a new server
     HttpServer::new(|| {
         App::new()
-            .service(echo) // From getting started
-            .route("/hey", web::get().to(manual_hello)) // From getting started
-            .service(Files::new("/", "www/dist") // File server needed for Svelte GUI, has to be created as last
-                .prefer_utf8(true)
-                .index_file("index.html")
+            .service(
+                Files::new("/", "www/dist") // Create new file server with folder ./www/dist for route /
+                .prefer_utf8(true) // Use UTF-8 encoding
+                .index_file("index.html") // Set index.html to be displayed if no other file is being requested for the directory
             )
     })
-    .bind(("127.0.0.1", 8080))? // Sample bind
+    // Bind it to an IP address and port
+    .bind(("127.0.0.1", 8080))?
+    // Start the server
     .run()
     .await
 }
