@@ -17,7 +17,7 @@ Some might get added or removed later on.
 | Framework | Programming language | Dependencies
 | --------  | -------------------  | ------------
 | [Phoenix](https://www.phoenixframework.org/) | [Elixir](https://en.wikipedia.org/wiki/Elixir_(programming_language)) |
-| [Vapor](https://vapor.codes/) | [Swift](https://en.wikipedia.org/wiki/Swift_(programming_language)) | [Front-end framework](https://astro.build/)
+| [Vapor](https://vapor.codes/) | [Swift](https://en.wikipedia.org/wiki/Swift_(programming_language)) | [Astro](https://astro.build/)
 | [ASP.NET Core](https://en.wikipedia.org/wiki/ASP.NET_Core) | [C#](https://en.wikipedia.org/wiki/C_Sharp_(programming_language)) &bull; [F#](https://en.wikipedia.org/wiki/F_Sharp_(programming_language)) &bull; [Visual Basic (.NET)](https://en.wikipedia.org/wiki/Visual_Basic_.NET) | |
 | [Uno](https://platform.uno/) (WASM) | [C#](https://en.wikipedia.org/wiki/C_Sharp_(programming_language)) &bull; [F#](https://en.wikipedia.org/wiki/F_Sharp_(programming_language)) &bull; [Visual Basic (.NET)](https://en.wikipedia.org/wiki/Visual_Basic_.NET) | |
 | [Play](https://www.playframework.com/) | [Scala](https://en.wikipedia.org/wiki/Scala_(programming_language)) &bull; [Kotlin](https://en.wikipedia.org/wiki/Kotlin_(programming_language)) | |
