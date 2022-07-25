@@ -2,19 +2,22 @@
 use actix_web::{App, HttpServer}; 
 use actix_files::Files;
 
-#[actix_web::main] // Make the main function usable by actix_web
+mod constant;
+use constant::{BINDADDR, BINDPORT, WWWROOT};
+
+#[actix_web::main]
 async fn main() -> std::io::Result<()> {
     // Create a new server
-    HttpServer::new(|| {
+    HttpServer::new(move || {
         App::new()
             .service(
-                Files::new("/", "www/dist") // Create new file server with folder ./www/dist for route /
-                .prefer_utf8(true) // Use UTF-8 encoding
-                .index_file("index.html") // Set index.html to be displayed if no other file is being requested for the directory
+                Files::new("/", WWWROOT)
+                .prefer_utf8(true)
+                .index_file("index.html")
             )
     })
     // Bind it to an IP address and port
-    .bind(("127.0.0.1", 8080))?
+    .bind((BINDADDR, BINDPORT))?
     // Start the server
     .run()
     .await
